@@ -1,0 +1,22 @@
+.cad__title {
+    font-size: 44px;
+    color: var(--gray);
+    font-weight: 700;
+    padding: 8px 0;
+}
+
+.cad__container {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 20px;
+    padding: 20px 0;
+}
+
+.cad-form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 50px;
+    min-width: 300px;
+}

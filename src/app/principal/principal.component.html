@@ -1,0 +1,51 @@
+
+<section class="cad_container">
+<form class="cad-form" [formGroup]="alunoFormGroup" (submit)="adicionarRegistro()">
+    
+    <label for="nome" >Nome do Aluno</label>
+    <input 
+        name="nome"
+        type="text"
+        formControlName="nome"
+        placeholder="Digite o nome do aluno"
+    />
+
+    <label for="nota1">Prova 1
+        <input
+            name="nota1"
+            formControlName="nota1"
+            type="number"
+            placeholder="Digite uma nota de 0 a 10"
+            min="0"
+            max="10"
+        />
+    </label>
+
+    <label for="nota2">Prova 2
+        <input
+            name="nota2"
+            formControlName="nota2"
+            type="number"
+            placeholder="Digite uma nota de 0 a 10"
+            min="0"
+            max="10"
+        />
+    </label>
+
+    <label for="nota3">Prova 3
+        <input
+            name="nota3"
+            formControlName="nota3"
+            type="number"
+            placeholder="Digite uma nota de 0 a 10"
+            min="0"
+            max="10"
+        />
+    </label>
+    <button type="submit" [disabled]="(alunoFormGroup.invalid)">Salvar</button>
+</form>
+
+
+<button type="button">Consultar alunos cadastrados</button>
+
+</section>
