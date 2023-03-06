@@ -4,8 +4,8 @@ import { PaginaRegistrosComponent } from './pagina-registros/pagina-registros.co
 import { PrincipalComponent } from './principal/principal.component';
 
 const routes: Routes = [
-  { path: "principal", component: PrincipalComponent },
   { path: "", component: PrincipalComponent },
+  { path: "principal", component: PrincipalComponent },
   { path: "pagina-registros", component: PaginaRegistrosComponent}
 ];
 

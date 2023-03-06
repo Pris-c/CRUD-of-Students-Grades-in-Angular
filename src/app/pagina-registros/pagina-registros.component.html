@@ -1,31 +1,16 @@
-<h2>PAGINA WORKS!</h2>
+<h2>Alunos Registrados</h2>
 
 <section class="alunos-lista">
-    <div *ngFor="let aluno of alunos"></div>
-</section>
 
-
-
-<!--
-<section class="product-list">
-    <div class="product-list__card" *ngFor="let produto of produtos">
+    <div *ngFor="let aluno of bancoDeAlunos">
+        <p>{{aluno.nome}}</p>
+        <p>{{aluno.nota1}}</p>
+        <p>{{aluno.nota2}}</p>
+        <p>{{aluno.nota3}}</p>
+        <p>{{aluno.media | number : '1.2-2'}}</p>
+        <p>{{status(aluno.media)}}</p>
         
-        <a routerLink="/produtos/{{produto.id}}" class="product-list__link">
-            <img [src]="produto.imagem">
-            <h2 class="product-item__name">
-                {{produto.descricao}}
-            </h2>
-            <p class="product-item__price">
-                 {{produto.preco | currency: "BRL"}}
-            </p>
-            <p class="product-item__price-description">
-                {{produto.descricaoPreco}}
-            </p>
-            <button type="button" class="product-item__bey-button">
-                Comprar
-            </button>
-        </a>
-
     </div>
+
+
 </section>
--->

@@ -12,7 +12,7 @@ import { RegistrosService } from '../registros.service';
 
 export class PrincipalComponent {
   private bancoDeAlunos: IAluno[] = [];
-  private idNumber: number = 2;
+  private idNumber: number = 0;
   //private novoAluno: IAluno;
 
   constructor(
@@ -32,7 +32,8 @@ export class PrincipalComponent {
     nota1: [[ 
       Validators.required,
       Validators.min(0),
-      Validators.max(10)
+      Validators.max(10),
+      
     ]],
     nota2: [[ 
       Validators.min(0),
@@ -54,10 +55,11 @@ export class PrincipalComponent {
       nome: this.alunoFormGroup.value.nome,
       nota1: this.alunoFormGroup.value.nota1,
       nota2: this.alunoFormGroup.value.nota2,
-      nota3: this.alunoFormGroup.value.nota3
+      nota3: this.alunoFormGroup.value.nota3,
+      media: this.registrosService.calcularMedia(this.alunoFormGroup.value.nota1, this.alunoFormGroup.value.nota2, this.alunoFormGroup.value.nota3)
     }
-    this.bancoDeAlunos.push(novoAluno);
-    alert("Aluno adicionado!")
-    console.log(this.bancoDeAlunos);
+    this.registrosService.adicionarRegistro(novoAluno);
+    this.idNumber++;
+    this.alunoFormGroup.reset();
   }
 }
