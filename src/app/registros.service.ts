@@ -30,8 +30,21 @@ export class RegistrosService {
 
   setId(aluno: IAluno){
     this.alunoEdit = aluno;
-    //console.log(this.bancoDeAlunos);
-    //console.log(this.alunoEdit.nome);
+  }
+
+  editarRegistro(alunoEdited: IAluno){
+    for (var i=0; i < this.bancoDeAlunos.length; i++){
+      var alunoBanco = this.bancoDeAlunos[i];
+      if (alunoBanco.id == alunoEdited.id){
+        alunoBanco.nome = alunoEdited.nome;
+        alunoBanco.nota1 = alunoEdited.nota1;
+        alunoBanco.nota2 = alunoEdited.nota2;
+        alunoBanco.nota3 = alunoEdited.nota3;
+        alunoBanco.media = alunoEdited.media;
+        alunoBanco.situacao = alunoEdited.situacao;
+        localStorage.setItem("registros", JSON.stringify(this.bancoDeAlunos)); 
+      }
+    }
   }
 
 
