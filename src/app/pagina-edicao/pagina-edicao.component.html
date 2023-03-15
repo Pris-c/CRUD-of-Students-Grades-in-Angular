@@ -1,21 +1,20 @@
 
 <section class="cad_container">
-    <form class="cad-form" [formGroup]="alunoFormGroup" (submit)="adicionarRegistro()">
+    <form class="cad-form" [formGroup]="alunoFormGroup">
         
-        <label for="nome" >Nome do Aluno</label>
+        <label for="nome"  >Nome do Aluno</label>
         <input 
-            name="nome"
-            value="valueNome()"
+            [(ngModel)]="alunoEdit.nome"
             type="text"
+            placeholder=""
             formControlName="nome"
-            placeholder="Digite o nome do aluno"
+            value="alunoEdit.nome"
         />
             <label class="cad-notas" for="nota1">Prova 1
                 <input
-                    name="nota1"
+                    [(ngModel)]="alunoEdit.nota1"
                     formControlName="nota1"
                     type="number"
-                    placeholder="Digite uma nota de 0 a 10"
                     min="0"
                     max="10"
                 />
@@ -23,10 +22,9 @@
 
         <label class="cad-notas" for="nota2">Prova 2
             <input
-                name="nota2"
+                [(ngModel)]="alunoEdit.nota2"
                 formControlName="nota2"
                 type="number"
-                placeholder="Digite uma nota de 0 a 10"
                 min="0"
                 max="10"
             />
@@ -34,7 +32,7 @@
 
         <label class="cad-notas" for="nota3">Prova 3
             <input
-                name="nota3"
+                [(ngModel)]="alunoEdit.nota3"
                 formControlName="nota3"
                 type="number"
                 placeholder="Digite uma nota de 0 a 10"

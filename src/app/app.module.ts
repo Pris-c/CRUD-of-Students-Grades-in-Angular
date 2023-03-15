@@ -7,13 +7,15 @@ import { PrincipalComponent } from './principal/principal.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { PaginaRegistrosComponent } from './pagina-registros/pagina-registros.component';
+import { PaginaEdicaoComponent } from './pagina-edicao/pagina-edicao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
     HeaderComponent,
-    PaginaRegistrosComponent
+    PaginaRegistrosComponent,
+    PaginaEdicaoComponent,
   ],
   imports: [
     BrowserModule,

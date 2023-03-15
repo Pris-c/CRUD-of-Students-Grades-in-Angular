@@ -21,10 +21,13 @@ export class PrincipalComponent {
     private formBuilder: FormBuilder
   ){}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bancoDeAlunos = this.registrosService.obtemRegistros();
+    //console.log(this.lastId);
+  }
 
   alunoFormGroup = this.formBuilder.group({
-  
+    id: [],
     nome: ["", [
       Validators.minLength(10),
       Validators.required,
@@ -51,12 +54,13 @@ export class PrincipalComponent {
 
   adicionarRegistro(){
     const novoAluno: IAluno = {
-      id: this.idNumber,
+      id: this.registrosService.obtemLastId(),
       nome: this.alunoFormGroup.value.nome,
       nota1: this.alunoFormGroup.value.nota1,
       nota2: this.alunoFormGroup.value.nota2,
       nota3: this.alunoFormGroup.value.nota3,
-      media: this.registrosService.calcularMedia(this.alunoFormGroup.value.nota1, this.alunoFormGroup.value.nota2, this.alunoFormGroup.value.nota3)
+      media: this.registrosService.calcularMedia(this.alunoFormGroup.value.nota1, this.alunoFormGroup.value.nota2, this.alunoFormGroup.value.nota3),
+      situacao: this.registrosService.situacao(this.registrosService.calcularMedia(this.alunoFormGroup.value.nota1, this.alunoFormGroup.value.nota2, this.alunoFormGroup.value.nota3))
     }
     this.registrosService.adicionarRegistro(novoAluno);
     this.idNumber++;
