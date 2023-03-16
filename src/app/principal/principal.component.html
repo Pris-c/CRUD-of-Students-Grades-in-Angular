@@ -1,5 +1,5 @@
 
-<section class="cad_container">
+<section class="cad__container">
     <form class="cad-form" [formGroup]="alunoFormGroup" (submit)="adicionarRegistro()">
         
         <label for="nome" >Nome do Aluno</label>
@@ -9,7 +9,22 @@
             type="text"
             formControlName="nome"
             placeholder="Digite o nome do aluno"
+            [class.valid]="alunoFormGroup.controls['nome'].valid"
+            [class.invalid]="alunoFormGroup.controls['nome'].invalid && 
+            (alunoFormGroup.controls['nome'].touched || alunoFormGroup.controls['nome'].dirty)"
         />
+        <div *ngIf="alunoFormGroup.controls['nome'].invalid && 
+        (alunoFormGroup.controls['nome'].touched || alunoFormGroup.controls['nome'].dirty)">
+            <small class="error-message" *ngIf="alunoFormGroup.controls['nome'].hasError('minlength')">
+                Esse campo precisa de no mínimo 20 caracteres!
+            </small>
+            <small class="error-message" *ngIf="alunoFormGroup.controls['nome'].hasError('required')">
+                Esse campo precisa ser preenchido!
+            </small>
+        </div>
+        
+
+
             <label class="cad-notas" for="nota1">Prova 1
                 <input
                     name="nota1"
