@@ -1,27 +1,50 @@
 
 <section class="cad_container">
-    <form class="cad-form" [formGroup]="alunoFormGroup">
+    <form class="row gy-2 gx-3 align-items-center" [formGroup]="alunoFormGroup">
+
         
-        <label for="nome"  >Nome do Aluno</label>
+        <label class="form-label" for="nome">Nome do Aluno</label>
         <input 
             [(ngModel)]="alunoEdit.nome"
             type="text"
-            placeholder=""
+            class="form-control"
             formControlName="nome"
-            value="alunoEdit.nome"
         />
-            <label class="cad-notas" for="nota1">Prova 1
+        <div class="form-text" *ngIf="alunoFormGroup.controls['nome'].invalid && 
+            (alunoFormGroup.controls['nome'].touched || alunoFormGroup.controls['nome'].dirty)">
+                <small class="error-message" *ngIf="alunoFormGroup.controls['nome'].hasError('minlength')">
+                    Esse campo precisa de no mínimo 20 caracteres!
+                </small>
+                <small class="error-message" *ngIf="alunoFormGroup.controls['nome'].hasError('required')">
+                    Esse campo precisa ser preenchido!
+                </small>
+        </div>
+
+
+        <label class="form-label" for="nota1">Prova 1
                 <input
+                    class="form-control"
                     [(ngModel)]="alunoEdit.nota1"
                     formControlName="nota1"
                     type="number"
                     min="0"
                     max="10"
                 />
-            </label>
+        </label>
+        <div class="form-text" *ngIf="alunoFormGroup.controls['nota1'].invalid && 
+                (alunoFormGroup.controls['nota1'].touched || alunoFormGroup.controls['nota1'].dirty)">
+                    <small class="error-message" *ngIf="alunoFormGroup.controls['nota1'].hasError('min') || alunoFormGroup.controls['nota1'].hasError('max')">
+                            A nota deve estar entre 0 e 10!
+                    </small>
+                    <small class="error-message" *ngIf="alunoFormGroup.controls['nota1'].hasError('required')">
+                            Esse campo precisa ser preenchido!
+                    </small>
+        </div>
+            
 
-        <label class="cad-notas" for="nota2">Prova 2
+        <label class="form-label" for="nota2">Prova 2
             <input
+                class="form-control"
                 [(ngModel)]="alunoEdit.nota2"
                 formControlName="nota2"
                 type="number"
@@ -29,18 +52,37 @@
                 max="10"
             />
         </label>
+        <div class="form-text" *ngIf="alunoFormGroup.controls['nota2'].invalid && 
+            (alunoFormGroup.controls['nota2'].touched || alunoFormGroup.controls['nota2'].dirty)">
+                <small class="error-message" *ngIf="alunoFormGroup.controls['nota2'].hasError('min') || alunoFormGroup.controls['nota2'].hasError('max')">
+                    A nota deve estar entre 0 e 10!
+                </small>
+                <small class="error-message" *ngIf="alunoFormGroup.controls['nota2'].hasError('required')">
+                    Esse campo precisa ser preenchido!
+                </small>
+        </div>
 
-        <label class="cad-notas" for="nota3">Prova 3
+        <label class="form-label" for="nota3">Prova 3
             <input
+                class="form-control"
                 [(ngModel)]="alunoEdit.nota3"
                 formControlName="nota3"
                 type="number"
-                placeholder="Digite uma nota de 0 a 10"
                 min="0"
                 max="10"
             />
         </label>
-        <button type="submit" [disabled]="(alunoFormGroup.invalid)" (click)="editarRegistro()">Salvar</button>
+        <div class="form-text" *ngIf="alunoFormGroup.controls['nota3'].invalid && 
+        (alunoFormGroup.controls['nota3'].touched || alunoFormGroup.controls['nota3'].dirty)">
+            <small class="error-message" *ngIf="alunoFormGroup.controls['nota3'].hasError('min') || alunoFormGroup.controls['nota3'].hasError('max')">
+                A nota deve estar entre 0 e 10!
+            </small>
+            <small class="error-message" *ngIf="alunoFormGroup.controls['nota3'].hasError('required')">
+                Esse campo precisa ser preenchido!
+            </small>
+        </div>
+
+        <button class="btn btn-primary row" type="submit" [disabled]="(alunoFormGroup.invalid)" (click)="editarRegistro()">Salvar</button>
     </form>
 
 </section>

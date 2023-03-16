@@ -2,34 +2,38 @@
     <h2>Não há nenhum aluno registrado.</h2>
 </section>
 
-<section *ngIf="(this.bancoDeAlunos.length != 0)" class="alunos-lista">
-    <h2>Alunos Registrados</h2>
-        <table class="table-registro">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Nota 1</th>
-            <th>Nota 2</th>
-            <th>Nota 3</th>
-            <th>Média</th>
-            <th>Situação</th>
-            <th>Ações</th>
-        </tr>
-            <tr *ngFor="let aluno of bancoDeAlunos">
-                <th>{{aluno.id}}</th>
-                <th>{{aluno.nome}}</th>
-                <th>{{aluno.nota1 | number : '1.2-2'}}</th>
-                <th>{{aluno.nota2 | number : '1.2-2'}}</th>
-                <th>{{aluno.nota3 | number : '1.2-2'}}</th>
-                <th>{{aluno.media | number : '1.2-2'}}</th>
-                <th>{{aluno.situacao}}</th>
-                    <th>
-                        <button type="button" (click)="deletarRegistro(aluno.id)">Excluir</button>
-                    </th>
-                    <th>
-                        <button type="button" (click)="setId(aluno)">Editar</button>
-                    </th>
 
-            </tr>
-    </table>
+<section *ngIf="(this.bancoDeAlunos.length != 0)">
+<table class="table">
+    <thead >
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Nota 1</th>
+        <th scope="col">Nota 2</th>
+        <th scope="col">Nota 3</th>
+        <th scope="col">Média</th>
+        <th scope="col">Situação</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let aluno of bancoDeAlunos">
+      <tr>
+        <th scope="row">{{aluno.id}}</th>
+        <td>{{aluno.nome}}</td>
+        <td>{{aluno.nota1 | number : '1.2-2'}}</td>
+        <td>{{aluno.nota2 | number : '1.2-2'}}</td>
+        <td>{{aluno.nota3 | number : '1.2-2'}}</td>
+        <td>{{aluno.media | number : '1.2-2'}}</td>
+        <td>{{aluno.situacao}}</td>
+
+        <td>
+            <button class="btn btn-primary row" type="button" (click)="deletarRegistro(aluno.id)">Excluir</button>
+        </td>
+        <td>
+            <button class="btn btn-primary row" type="button" (click)="setId(aluno)">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </section>
