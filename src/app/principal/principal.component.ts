@@ -33,9 +33,9 @@ export class PrincipalComponent {
       Validators.required,
     ]],
     nota1: [[ 
-      Validators.required,
       Validators.min(0),
       Validators.max(10),
+      Validators.required,
       
     ]],
     nota2: [[ 

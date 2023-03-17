@@ -24,9 +24,18 @@ export class PaginaEdicaoComponent {
   ){}
 
   ngOnInit(): void {
-    this.alunoEdit = this.registrosService.alunoEdit;
-    console.log(this.alunoEdit.nome);
-
+    
+    //console.log("chamei meu alunim");
+    //console.log(this.alunoEdit);
+      if (this.registrosService.alunoEdit == null) {
+        
+        this.router.navigate(["pagina-registros"]);
+      }
+      else{
+        console.log("antes");
+        this.alunoEdit = this.registrosService.alunoEdit;
+        console.log("depois");
+      }
   }
 
   editarRegistro(){
