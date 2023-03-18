@@ -1,3 +1,13 @@
+<!--<section>
+          <div>
+            <img src="assets/estudantes1.jpg" class="d-block w-100" alt="...">
+          </div>
+</section>-->
+
+
+
+
+
 <section>
 
     <form class="row gy-2 gx-3 align-items-center" [formGroup]="alunoFormGroup" (submit)="adicionarRegistro()">
@@ -17,7 +27,7 @@
                 <div class="form-text" *ngIf="alunoFormGroup.controls['nome'].invalid && 
                     (alunoFormGroup.controls['nome'].touched || alunoFormGroup.controls['nome'].dirty)">
                         <small class="error-message" *ngIf="alunoFormGroup.controls['nome'].hasError('minlength')">
-                            Esse campo precisa de no mínimo 20 caracteres!
+                            Esse campo precisa de no mínimo 5 caracteres!
                         </small>
                         <small class="error-message" *ngIf="alunoFormGroup.controls['nome'].hasError('required')">
                             Esse campo precisa ser preenchido!

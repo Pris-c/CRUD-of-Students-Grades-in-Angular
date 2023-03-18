@@ -29,24 +29,24 @@ export class PrincipalComponent {
   alunoFormGroup = this.formBuilder.group({
     id: [],
     nome: ["", [
-      Validators.minLength(10),
+      Validators.minLength(5),
       Validators.required,
     ]],
-    nota1: [[ 
+    nota1: [null, [ 
       Validators.min(0),
       Validators.max(10),
       Validators.required,
       
     ]],
-    nota2: [[ 
+    nota2: [null, [ 
       Validators.min(0),
       Validators.max(10),
-      Validators.required
+      Validators.required,
     ]],
-    nota3: [[ 
+    nota3: [null, [ 
       Validators.min(0),
       Validators.max(10),
-      Validators.required
+      Validators.required,
     ]],
 
   })
