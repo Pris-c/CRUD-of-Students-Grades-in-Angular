@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IAluno } from './alunos';
+import { NotificacaoService } from './notificacao.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,13 @@ export class RegistrosService {
   public alunoEdit: IAluno;
 
   constructor() { }
+    notificacao: NotificacaoService;
 
   adicionarRegistro(novoAluno: IAluno){
     this.bancoDeAlunos.push(novoAluno);
     localStorage.setItem("registros", JSON.stringify(this.bancoDeAlunos));
     this.lastId++;
     localStorage.setItem("lastId", this.lastId.toString());
-    
-    alert("Aluno adicionado!")
     console.log(this.bancoDeAlunos);
   }
 

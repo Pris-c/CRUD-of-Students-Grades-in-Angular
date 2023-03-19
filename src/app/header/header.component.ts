@@ -20,5 +20,10 @@ export class HeaderComponent {
     this.router.navigate(["pagina-registros"]);
   }
 
+  navegarPaginaInicial(){
+    this.router.navigate(["pagina-inicial"]);
+  }
+
+
 }
 

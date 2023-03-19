@@ -1,9 +1,9 @@
-<section *ngIf="(this.bancoDeAlunos.length == 0)" class="alunos-lista">
+<section *ngIf="(this.bancoDeAlunos.length == 0)" class="alunos-lista class-margin">
     <h2 class="container-menu">Não há nenhum aluno registrado.</h2>
 </section>
 
 
-<section *ngIf="(this.bancoDeAlunos.length != 0)">
+<section class="class-margin" *ngIf="(this.bancoDeAlunos.length != 0)">
 <table class="table">
     <thead >
       <tr>

@@ -65,5 +65,8 @@ export class PrincipalComponent {
     this.registrosService.adicionarRegistro(novoAluno);
     this.idNumber++;
     this.alunoFormGroup.reset();
+    this.notificacaoService.notificar("Novo aluno adicionado!");
+    
+
   }
 }

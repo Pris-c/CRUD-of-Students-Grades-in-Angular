@@ -79,3 +79,7 @@
 .contact-form button:disabled:hover {
     filter: none;
 }
+
+.class-margin{
+    margin-bottom: 100xp;
+}

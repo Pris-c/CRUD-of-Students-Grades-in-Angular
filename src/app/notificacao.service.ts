@@ -10,4 +10,5 @@ export class NotificacaoService {
   notificar(mensagem: string){
     alert(mensagem);
   }
+
 }
