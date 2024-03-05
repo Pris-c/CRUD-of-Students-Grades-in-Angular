@@ -11,4 +11,3 @@ This project was built to practice development with Angular.
 * CSS
 * Typescript
 
-<br>You can access the website [here](https://pris-c.github.io/CRUD-of-Students-Grades-in-Angular/).
