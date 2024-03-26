@@ -31,7 +31,7 @@ This project consists of the frontend side of a scholar website where teachers c
   <img width="500" alt="Page with the existing registers" src="ReadMeImages/registros.png">
 </div>
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 * IDE: Visual Studio Code
 * Angular
@@ -41,7 +41,7 @@ This project consists of the frontend side of a scholar website where teachers c
 * Github
 * Github Pages
 
-## 👷🏽‍♀️ Usage
+## Usage
 
 You can interact with the project on [Github Pages](https://pris-c.github.io/student-management/).
 
@@ -81,12 +81,12 @@ If you'd like to utilize the project locally, follow these steps:
     http://localhost:4200
     ```
 
-## 💁🏾 Contribution
+## Contribution
 
 Contributions are welcome! Feel free to open issues to report bugs or propose enhancements. If you'd like to contribute directly, open a pull request.
 <br>
 
-## 🖋️ Author
+## Author
 
 Priscila Campos: 
 👩🏾‍💻  [@Pris-c](https://github.com/Pris-c)
